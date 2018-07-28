@@ -1,0 +1,20 @@
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver     #数据库驱动的名字
+    url: jdbc:mysql://192.168.99.100:3306/dockerMysql?useSSL=false      #连接数据库的URL
+    username: root   #登录数据库的用户名
+    password: root    #登录密码
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect # Hibernate 属性，SQL 方言使得 Hibernate 为所选数据库生成更好的 SQL
+        show_sql: true             #是否在控制台上打印sql语句
+        format_sql: true           #是否格式化生成的 SQL 语句
+        ddl-auto: create          #系统启动时对数据库是否进行映射
+        use_sql_comments: true    # 是否显示注释
+        generate_statistics: false   #是否显示缓存信息
+    generate-ddl: true
+server:
+  port: 8082
